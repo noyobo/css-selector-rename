@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "lib",
+    "module": "CommonJS",
+    "declaration": true,
+    "noEmitOnError": false
+  }
+}

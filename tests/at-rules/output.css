@@ -1,0 +1,63 @@
+@counter-style thumbs {
+  system: cyclic;
+  symbols: "👍";
+  suffix: " ";
+}
+ty-ul {
+  list-style: thumbs;
+}
+@media screen and (min-width: 900px) {
+  ty-article {
+    padding: 1rem 3rem;
+  }
+}
+@supports (display: flex) {
+  @media screen and (min-width: 900px) {
+    ty-article {
+      display: flex;
+    }
+  }
+}
+@supports not (display: grid) {
+  ty-div {
+    float: right;
+  }
+}
+@document url(https://www.example.com/)
+{
+  ty-h1 {
+    color: green;
+  }
+}
+@page {
+  margin: 1cm;
+}
+@page :first {
+  margin: 2cm;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(/fonts/OpenSans-Regular-webfont.woff2) format("woff2"),
+    url(/fonts/OpenSans-Regular-webfont.woff) format("woff");
+}
+@font-feature-values Font One {
+  @styleset {
+    nice-style: 12;
+  }
+}
+@font-feature-values Font Two {
+  @styleset {
+    nice-style: 4;
+  }
+}
+@property --property-name {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #c0ffee;
+}
+@color-profile --swop5c {
+  src: url(https://example.org/SWOP2006_Coated5v2.icc);
+}
+.ty-header {
+  background-color: color(--swop5c 0% 70% 20% 0%);
+}

@@ -1,0 +1,9 @@
+/* 注释 */
+view:nth-child(2) {
+  color: red;
+  background-color: red;
+}
+
+view:not(button) {
+  color: red;
+}

@@ -1,0 +1,21 @@
+.ty-a .ty-b {
+  color: red;
+}
+.ty-a + .ty-b {
+  color: red;
+}
+.ty-a ~ .ty-b {
+  color: red;
+}
+.ty-a:not(.ty-b) {
+  color: red;
+}
+ty-view ty-view {
+  color: red;
+}
+ty-view + ty-view {
+  color: red;
+}
+#a .ty-b {
+  color: red;
+}

@@ -1,0 +1,7 @@
+ty-view:nth-child(2) {
+  color: red;
+  background-color: red;
+}
+ty-view:not(ty-button) {
+  color: red;
+}
