@@ -16,6 +16,7 @@
   "scripts": {
     "test": "jest",
     "release": "standard-version",
+    "prepublishOnly": "npm run build",
     "build": "tsc",
     "watch": "tsc --watch"
   },
