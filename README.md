@@ -33,9 +33,9 @@ default options
 {
   test: (name) => true,
   selector: {
-    classes: true,
+    classes: false,
     ids: false,
-    tags: true,
+    tags: false,
   },
   rename: (name, type) => name
 }

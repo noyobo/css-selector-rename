@@ -3,24 +3,20 @@ import { parse, walk, generate, CssNode } from 'css-tree';
 export default function cssSelectorRename(
   css: string,
   options: {
-    test: RegExp | ((name: string) => boolean);
-    selector: {
-      tags: boolean;
-      ids: boolean;
-      classes: boolean;
+    test?: RegExp | ((name: string) => boolean);
+    selector?: {
+      tags?: boolean;
+      ids?: boolean;
+      classes?: boolean;
     };
-    rename: (value: string, type: CssNode['type']) => string;
+    rename: (value: string, type: 'ids' | 'tags' | 'classes', node?: CssNode) => string;
   }
 ): string {
   const ast = parse(css, { positions: false });
 
   const { rename, selector, test = () => true } = options;
   const { tags, ids, classes } = Object.assign(
-    {
-      tags: true,
-      ids: false,
-      classes: true,
-    },
+    { tags: false, ids: false, classes: false },
     selector
   );
 
@@ -34,15 +30,15 @@ export default function cssSelectorRename(
       }
       if (tags && type === 'TypeSelector' && node.name !== '*') {
         if (testFn(node.name)) {
-          node.name = rename(node.name, type);
+          node.name = rename(node.name, 'tags', node);
         }
       } else if (classes && type === 'ClassSelector') {
         if (testFn(node.name)) {
-          node.name = rename(node.name, type);
+          node.name = rename(node.name, 'classes', node);
         }
       } else if (ids && type === 'IdSelector') {
         if (testFn(node.name)) {
-          node.name = rename(node.name, type);
+          node.name = rename(node.name, 'ids', node);
         }
       }
     },
