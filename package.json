@@ -1,6 +1,6 @@
 {
   "name": "css-selector-rename",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CSS tool to rename css selector",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
