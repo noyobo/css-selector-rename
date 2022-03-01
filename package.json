@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "release": "standard-version",
     "prepublishOnly": "npm run build",
     "build": "tsc",
