@@ -1,5 +1,7 @@
 # css-selector-rename
 
+[![Node.js CI](https://github.com/noyobo/css-selector-rename/actions/workflows/node.js.yml/badge.svg)](https://github.com/noyobo/css-selector-rename/actions/workflows/node.js.yml)
+
 CSS 选择器重命名
 
 ## usage
