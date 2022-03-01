@@ -26,6 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - uses: c-hive/gha-yarn-cache@v2
       - run: yarn install --frozen-lockfile
+      - run: yarn build
       - run: yarn test
       - name: Codecov
         uses: codecov/codecov-action@v2.0.2
